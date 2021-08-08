@@ -111,8 +111,11 @@ files:
             """Choose the piece for the player to pick"""
 
             self.get_the_ends(output)
-            end1 = self.left_end[0]
-            end2 = self.right_end[1]
+            try:
+                end1 = self.left_end[0]
+                end2 = self.right_end[1]
+            except Exception:
+                raise WrongAnswerException("Your output has wrong format! Make sure you print the pieces like in example!")
             player_stock = self.get_the_stock(output)
             for i, j in enumerate(player_stock):
                 if end2 in j:
@@ -365,5 +368,9 @@ files:
         TestStage5('dominoes.dominoes').run_tests()
   learner_created: false
 feedback_link: https://hyperskill.org/projects/146/stages/790/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">JetBrains
+    Academy</a> to continue learning.
+  time: Sun, 08 Aug 2021 03:15:15 UTC
 record: -1
